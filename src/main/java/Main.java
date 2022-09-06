@@ -58,7 +58,7 @@ public class Main {
         return staff;
     }
 
-    private static String listToJson(List<Employee> list) {
+    public static String listToJson(List<Employee> list) {
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.setPrettyPrinting().create();
         Type listType = new TypeToken<List<Employee>>() {
@@ -66,7 +66,7 @@ public class Main {
         return gson.toJson(list, listType);
     }
 
-    private static void writeString(String json, String nameFileJson) {
+    public static void writeString(String json, String nameFileJson) {
         try (FileWriter fileWriter = new FileWriter(nameFileJson)) {
             fileWriter.write(json);
             fileWriter.flush();
@@ -126,7 +126,7 @@ public class Main {
         return employeeList;
     }
 
-    private static String readString(String nameFileJson) {
+    public static String readString(String nameFileJson) {
 
         StringBuilder stringBuilder = new StringBuilder();
 
@@ -142,13 +142,15 @@ public class Main {
         return String.valueOf(stringBuilder);
     }
 
-    private static List<Employee> jsonToList(String json2) {
+    public static  List<Employee> jsonToList(String json2) {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         Type listType = new TypeToken<List<Employee>>() {
         }.getType();
+
         return gson.fromJson(json2, listType);
     }
 }
 
-
+/*[Employee{id=1, firstName='John', lastName='Smith', country='USA', age=25}, Employee{id=2, firstName='Ivan', lastName='Petrov', country='RU', age=23}]*/
+/*[Employee{id=1, firstName='John', lastName='Smith', country='USA', age=25}, Employee{id=2, firstName='Ivan', lastName='Petrov', country='RU', age=23}]*/
