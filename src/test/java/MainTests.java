@@ -1,12 +1,12 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.w3c.dom.Node;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
+
 import java.util.List;
 
 public class MainTests {
@@ -62,14 +62,15 @@ public class MainTests {
 
     @Test
     public void testJsonToList() {
-        String json = "data2.json";
+        String json = Main.readString("data2.json");
         List<Employee> expected = new ArrayList<>();
         expected.add(employee1);
         expected.add(employee2);
 
         List<Employee> result = Main.jsonToList(json);
 
-        Assertions.assertArrayEquals(expected.toArray(), result.toArray());
+        assertThat(result, equalTo(expected));
+
 
     }
 
@@ -80,7 +81,7 @@ public class MainTests {
 
         Main.writeString(json, nameFileJson);
 
-        Assertions.assertEquals(Main.readString(nameFileJson), json);
+        assertThat(json, equalTo(Main.readString(nameFileJson)));
     }
 
 }
