@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MainTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-08T19:04:18" hostname="HOME-PC" time="0.032">
+<testsuite name="MainTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-09-08T19:27:44" hostname="HOME-PC" time="0.041">
   <properties/>
-  <testcase name="testJsonToList()" classname="MainTests" time="0.032"/>
+  <testcase name="testReadString()" classname="MainTests" time="0.01"/>
+  <testcase name="testListToJson()" classname="MainTests" time="0.026"/>
+  <testcase name="testJsonToList()" classname="MainTests" time="0.003"/>
+  <testcase name="testWriteString()" classname="MainTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
